@@ -1,5 +1,4 @@
 # Farm2Fork
-=========
 ###Description##
 Mobile App for tracking food from it's source to the store.
 
