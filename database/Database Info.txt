@@ -2,11 +2,15 @@
 / Database Access information 			/
 /=======================================/
 
+https://devweb2014.cis.strath.ac.uk/phpmyadmin/
+
+
 /=======================================/
 / Username: hwb12179					/
 / Password: gichstsu					/
 / HostName: devweb2014.cis.strath.ac.uk	/
 /=======================================/
+
 
 If using PHP to connect the following will likely be useful:
 
