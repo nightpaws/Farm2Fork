@@ -1,0 +1,16 @@
+CREATE TABLE `Users` (username varchar(30) NOT NULL, password varchar(255) NOT NULL, email varchar(255) NOT NULL, PRIMARY KEY (username));
+CREATE TABLE Farm (farm_id int(11) NOT NULL AUTO_INCREMENT, farmName varchar(60) NOT NULL, address varchar(255) NOT NULL UNIQUE, postcode varchar(8) NOT NULL UNIQUE, latitude double NOT NULL, longitude double NOT NULL, telephone varchar(15) UNIQUE, typeOfOperation varchar(128), cropsGrown varchar(128), description text, image text, PRIMARY KEY (farm_id));
+CREATE TABLE Animal (animal_id int(11) NOT NULL AUTO_INCREMENT, Farmfarm_id int(11) NOT NULL, Marketmarket_id int(11), species varchar(255) NOT NULL, breed varchar(255) NOT NULL, grazed varchar(255) NOT NULL, vaccinations varchar(255) NOT NULL, hormones varchar(255) NOT NULL, name varchar(60), image text, description text, PRIMARY KEY (animal_id));
+CREATE TABLE Market (market_id int(11) NOT NULL AUTO_INCREMENT, marketName varchar(60) NOT NULL, address varchar(255) NOT NULL UNIQUE, postcode varchar(8) NOT NULL UNIQUE, latitude double NOT NULL, longitude double NOT NULL, telephone varchar(15) UNIQUE, description text, image text, PRIMARY KEY (market_id));
+CREATE TABLE Favourite (favourite_id int(11) NOT NULL AUTO_INCREMENT, Userusername varchar(30) NOT NULL, Farmfarm_id int(11) NOT NULL, PRIMARY KEY (favourite_id));
+CREATE TABLE Crop (crop_id int(11) NOT NULL AUTO_INCREMENT, Farmfarm_id int(11) NOT NULL, strain varchar(255) NOT NULL, organic varchar(255) NOT NULL, harvestInterval varchar(128) NOT NULL, PRIMARY KEY (crop_id));
+CREATE TABLE Forum_Topic (topic_id int(11) NOT NULL AUTO_INCREMENT, Userusername varchar(30) NOT NULL, topic_title varchar(255) NOT NULL, PRIMARY KEY (topic_id));
+CREATE TABLE Forum_Post (post_id int(11) NOT NULL AUTO_INCREMENT, Forum_Topictopic_id int(11) NOT NULL, Userusername varchar(30) NOT NULL, contents text, post_date datetime NOT NULL, PRIMARY KEY (post_id));
+ALTER TABLE Animal ADD INDEX FKAnimalID (Farmfarm_id), ADD CONSTRAINT FKAnimalID FOREIGN KEY (Farmfarm_id) REFERENCES Farm (farm_id);
+ALTER TABLE Favourite ADD INDEX FKFavouriteUname (Userusername), ADD CONSTRAINT FKFavouriteUname FOREIGN KEY (Userusername) REFERENCES `Users` (username);
+ALTER TABLE Favourite ADD INDEX FKFavouriteID (Farmfarm_id), ADD CONSTRAINT FKFavouriteID FOREIGN KEY (Farmfarm_id) REFERENCES Farm (farm_id);
+ALTER TABLE Crop ADD INDEX FKCropID (Farmfarm_id), ADD CONSTRAINT FKCropID FOREIGN KEY (Farmfarm_id) REFERENCES Farm (farm_id);
+ALTER TABLE Forum_Topic ADD INDEX FKForum_TopUname (Userusername), ADD CONSTRAINT FKForum_TopUname FOREIGN KEY (Userusername) REFERENCES `Users` (username);
+ALTER TABLE Forum_Post ADD INDEX FKForum_PostTopID (Forum_Topictopic_id), ADD CONSTRAINT FKForum_PostTopID FOREIGN KEY (Forum_Topictopic_id) REFERENCES Forum_Topic (topic_id);
+ALTER TABLE Forum_Post ADD INDEX FKForum_PostUname (Userusername), ADD CONSTRAINT FKForum_PostUname FOREIGN KEY (Userusername) REFERENCES `Users` (username);
+ALTER TABLE Animal ADD INDEX FKAnimalMarkID (Marketmarket_id), ADD CONSTRAINT FKAnimalMarkID FOREIGN KEY (Marketmarket_id) REFERENCES Market (market_id);
