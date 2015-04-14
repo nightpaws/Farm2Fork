@@ -1,0 +1,92 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13-Mar-2015, 23:48:02
+    Author     : liamdiamond
+*/
+
+ html, body {
+   -webkit-user-select: none;
+   -moz-user-select: -moz-none;
+   -ms-user-select: none;
+   margin: 0;
+   padding: 0;
+   position:relative;
+}
+
+.main{
+    height: 70%;
+    width: 100%;
+    background-color: white;
+    position:absolute;
+}
+
+/* Images in divs: QR code, Map, Favourites, Forum*/
+.main img{
+    width: 50%;
+    height: 50%;
+}
+
+.header{
+    height: 10%;
+    width: 100%;
+    // Colour gradient background
+    background: -webkit-linear-gradient(#89D0E0, white); /* Safari */
+    background: -o-linear-gradient(#89D0E0, white); /* Opera */
+    background: -moz-linear-gradient(#89D0E0, white); /* Firefox */
+    background: linear-gradient(#89D0E0, white);  /* Standad */
+}
+
+/*Text in top header*/
+.header p {
+    line-height:300%;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 350%;
+    color: #693F0F;
+    position: relative;
+}
+
+
+.footer{
+    height: 20%;
+    width: 100%;
+    background-color: white;
+    color: red;
+    position:absolute; 
+    bottom:0;
+}
+
+#icons{
+    width: 100%;
+    height: 50%;
+}
+.thumbnail{
+    width: 11.5%;
+    height: 80%;
+    float: left;
+    background-color: white; 
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+.thumbnail img{
+    width: 100%;
+    height: 90%;
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+
+#farmGraphic img{
+    width: 100%;
+    height: 50%;
+}
+
+#main label{
+    width: 200%;
+    height: 200%;
+    background-color: blue;
+}
+

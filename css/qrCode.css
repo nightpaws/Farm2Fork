@@ -1,0 +1,53 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07-Apr-2015, 01:16:07
+    Author     : liamdiamond
+*/
+
+/*Used to hide default file chooser label*/
+.hidden{
+    display:none;
+    visibility:hidden;
+}
+
+#qrInputMethods{
+    text-align: center;
+}
+
+#qrInputMethods img{
+    width: 20%;
+    height: 20%;
+    text-align: center;
+}
+
+#qrMain p{
+    font-size: 250%;
+    text-align: center;
+    font-family: sans-serif;
+    color: green;    
+}
+
+.qrMeatPicture{
+    width: 80%;
+    height: 80%;
+}
+
+#newdiv{
+    text-align: center;
+}
+
+#barcodeImage {
+    width: 60%;
+    height: 20%;
+}
+
+#qrCodeUserInput {
+    border: 5px solid black;
+    width: 40%;
+    height: 10%;
+    font-size: 350%;
+}
