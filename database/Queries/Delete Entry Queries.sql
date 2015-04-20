@@ -1,9 +1,20 @@
-DELETE FROM Market_Animal WHERE Animalanimal_id = ? AND Marketmarket_id = ?;
-DELETE FROM Forum_Post WHERE post_id = ?;
-DELETE FROM Forum_Topic WHERE topic_id = ?;
-DELETE FROM Crop WHERE crop_id = ?;
-DELETE FROM Favourite WHERE favourite_id = ?;
-DELETE FROM Market WHERE market_id = ?;
-DELETE FROM Animal WHERE animal_id = ?;
-DELETE FROM Farm WHERE farm_id = ?;
-DELETE FROM Users WHERE username = ?;
+delete from Animal 
+  where animal_id = ?;
+delete from Farm 
+  where farm_id = ?;
+delete from Favourite 
+  where favourite_id = ?;
+delete from Users 
+  where username = ?;
+delete from Forum_Post 
+  where post_id = ?;
+delete from Forum_Topic 
+  where topic_id = ?;
+delete from Market_Animal 
+  where animalmarket_id = ?;
+delete from Market 
+  where market_id = ?;
+delete from Crop 
+  where crop_id = ?;
+delete from Dairy 
+  where produce_id = ?;

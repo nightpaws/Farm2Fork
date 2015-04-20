@@ -1,18 +1,89 @@
-CREATE TABLE Market_Animal (Animalanimal_id int(11) NOT NULL, Marketmarket_id int(11) NOT NULL, cut varchar(255), PRIMARY KEY (Animalanimal_id, Marketmarket_id));
-CREATE TABLE Forum_Post (post_id int(11) NOT NULL AUTO_INCREMENT, Forum_Topictopic_id int(11) NOT NULL, Userusername varchar(30) NOT NULL, contents text, post_date datetime NOT NULL, PRIMARY KEY (post_id));
-CREATE TABLE Forum_Topic (topic_id int(11) NOT NULL AUTO_INCREMENT, Userusername varchar(30) NOT NULL, topic_title varchar(128) NOT NULL, PRIMARY KEY (topic_id));
-CREATE TABLE Crop (crop_id int(11) NOT NULL AUTO_INCREMENT, Farmfarm_id int(11) NOT NULL, strain varchar(255) NOT NULL, organic varchar(255) NOT NULL, harvestInterval varchar(128) NOT NULL, PRIMARY KEY (crop_id));
-CREATE TABLE Favourite (favourite_id int(11) NOT NULL AUTO_INCREMENT, Userusername varchar(30) NOT NULL, Farmfarm_id int(11) NOT NULL, PRIMARY KEY (favourite_id));
-CREATE TABLE Market (market_id int(11) NOT NULL AUTO_INCREMENT, marketName varchar(60) NOT NULL, street varchar(255) NOT NULL, town varchar(255) NOT NULL, postcode varchar(8) NOT NULL, telephone varchar(15) UNIQUE, description text, image text, PRIMARY KEY (market_id));
-CREATE TABLE Animal (animal_id int(11) NOT NULL AUTO_INCREMENT, Farmfarm_id int(11) NOT NULL, species varchar(255) NOT NULL, breed varchar(255) NOT NULL, grazed varchar(255) NOT NULL, vaccinations varchar(255) NOT NULL, hormones varchar(255) NOT NULL, name varchar(60), image text, description text, PRIMARY KEY (animal_id));
-CREATE TABLE Farm (farm_id int(11) NOT NULL AUTO_INCREMENT, farmName varchar(60) NOT NULL, street varchar(255) NOT NULL, town varchar(255) NOT NULL, postcode varchar(8) NOT NULL, telephone varchar(16) UNIQUE, typeOfOperation varchar(128) NOT NULL, cropsGrown varchar(128) NOT NULL, description text, image text, PRIMARY KEY (farm_id));
-CREATE TABLE Users (username varchar(30) NOT NULL, password varchar(60) NOT NULL, email varchar(255) NOT NULL, isAdmin varchar(1), PRIMARY KEY (username));
-ALTER TABLE Market_Animal ADD INDEX FKMarket_Ani622909 (Animalanimal_id), ADD CONSTRAINT FKMarket_Ani622909 FOREIGN KEY (Animalanimal_id) REFERENCES Animal (animal_id);
-ALTER TABLE Market_Animal ADD INDEX FKMarket_Ani592575 (Marketmarket_id), ADD CONSTRAINT FKMarket_Ani592575 FOREIGN KEY (Marketmarket_id) REFERENCES Market (market_id);
-ALTER TABLE Animal ADD INDEX FKAnimal263948 (Farmfarm_id), ADD CONSTRAINT FKAnimal263948 FOREIGN KEY (Farmfarm_id) REFERENCES Farm (farm_id);
-ALTER TABLE Favourite ADD INDEX FKFavourite897207 (Userusername), ADD CONSTRAINT FKFavourite897207 FOREIGN KEY (Userusername) REFERENCES Users (username);
-ALTER TABLE Favourite ADD INDEX FKFavourite301737 (Farmfarm_id), ADD CONSTRAINT FKFavourite301737 FOREIGN KEY (Farmfarm_id) REFERENCES Farm (farm_id);
-ALTER TABLE Crop ADD INDEX FKCrop653044 (Farmfarm_id), ADD CONSTRAINT FKCrop653044 FOREIGN KEY (Farmfarm_id) REFERENCES Farm (farm_id);
-ALTER TABLE Forum_Topic ADD INDEX FKForum_Topi24236 (Userusername), ADD CONSTRAINT FKForum_Topi24236 FOREIGN KEY (Userusername) REFERENCES Users (username);
-ALTER TABLE Forum_Post ADD INDEX FKForum_Post618724 (Forum_Topictopic_id), ADD CONSTRAINT FKForum_Post618724 FOREIGN KEY (Forum_Topictopic_id) REFERENCES Forum_Topic (topic_id);
-ALTER TABLE Forum_Post ADD INDEX FKForum_Post756638 (Userusername), ADD CONSTRAINT FKForum_Post756638 FOREIGN KEY (Userusername) REFERENCES Users (username);
+create table Animal (
+  animal_id    int(10) not null auto_increment, 
+  Farmfarm_id  int(10) not null, 
+  species      varchar(255) not null, 
+  breed        varchar(255) not null, 
+  grazed       varchar(255) not null, 
+  vaccinations varchar(255) not null, 
+  hormones     varchar(255) not null, 
+  name         varchar(60), 
+  image        text, 
+  description  text, 
+  primary key (animal_id));
+create table Farm (
+  farm_id         int(10) not null auto_increment, 
+  farmName        varchar(60) not null, 
+  street          varchar(255) not null, 
+  town            varchar(255) not null, 
+  postcode        varchar(8) not null, 
+  telephone       varchar(16) unique, 
+  typeOfOperation varchar(128) not null, 
+  cropsGrown      varchar(128) not null, 
+  organic         varchar(128) not null, 
+  description     text, 
+  primary key (farm_id));
+create table Favourite (
+  favourite_id  int(10) not null auto_increment, 
+  Farmfarm_id   int(10) not null, 
+  Usersusername varchar(30) not null, 
+  primary key (favourite_id));
+create table Users (
+  username varchar(30) not null, 
+  password varchar(255) not null, 
+  email    varchar(255) not null, 
+  isAdmin  int(1) not null, 
+  primary key (username));
+create table Forum_Post (
+  post_id             int(10) not null auto_increment, 
+  Usersusername       varchar(30) not null, 
+  Forum_Topictopic_id int(10) not null, 
+  post_date           datetime null, 
+  contents            text, 
+  primary key (post_id));
+create table Forum_Topic (
+  topic_id      int(10) not null auto_increment, 
+  Usersusername varchar(30) not null, 
+  topic_title   varchar(128), 
+  primary key (topic_id));
+create table Market_Animal (
+  animalmarket_id int(10) not null auto_increment, 
+  Animalanimal_id int(10) not null, 
+  Marketmarket_id int(10) not null, 
+  cut             varchar(255), 
+  primary key (animalmarket_id));
+create table Market (
+  market_id   int(10) not null auto_increment, 
+  marketName  varchar(60) not null, 
+  street      varchar(255) not null, 
+  town        varchar(255) not null, 
+  postcode    varchar(8) not null, 
+  telephone   varchar(16) unique, 
+  description text, 
+  primary key (market_id));
+create table Crop (
+  crop_id         int(10) not null auto_increment, 
+  Farmfarm_id     int(10) not null, 
+  strain          varchar(255), 
+  harvestInterval varchar(128), 
+  organicCrop     varchar(128), 
+  primary key (crop_id));
+create table Dairy (
+  produce_id       int(10) not null auto_increment, 
+  Farmfarm_id      int(10) not null, 
+  harvestingSeason varchar(255) not null, 
+  irrigation       varchar(255) not null, 
+  storage          varchar(255) not null, 
+  acresHarvested   int(10) not null, 
+  yield            varchar(255) not null, 
+  organicDairy     varchar(128), 
+  primary key (produce_id));
+alter table Animal add index FKAnimal263948 (Farmfarm_id), add constraint FKAnimal263948 foreign key (Farmfarm_id) references Farm (farm_id);
+alter table Crop add index FKCrop653044 (Farmfarm_id), add constraint FKCrop653044 foreign key (Farmfarm_id) references Farm (farm_id);
+alter table Dairy add index FKDairy337719 (Farmfarm_id), add constraint FKDairy337719 foreign key (Farmfarm_id) references Farm (farm_id);
+alter table Favourite add index FKFavourite301737 (Farmfarm_id), add constraint FKFavourite301737 foreign key (Farmfarm_id) references Farm (farm_id);
+alter table Favourite add index FKFavourite482506 (Usersusername), add constraint FKFavourite482506 foreign key (Usersusername) references Users (username);
+alter table Forum_Post add index FKForum_Post828659 (Usersusername), add constraint FKForum_Post828659 foreign key (Usersusername) references Users (username);
+alter table Forum_Topic add index FKForum_Topi561062 (Usersusername), add constraint FKForum_Topi561062 foreign key (Usersusername) references Users (username);
+alter table Forum_Post add index FKForum_Post618724 (Forum_Topictopic_id), add constraint FKForum_Post618724 foreign key (Forum_Topictopic_id) references Forum_Topic (topic_id);
+alter table Market_Animal add index FKMarket_Ani622909 (Animalanimal_id), add constraint FKMarket_Ani622909 foreign key (Animalanimal_id) references Animal (animal_id);
+alter table Market_Animal add index FKMarket_Ani592575 (Marketmarket_id), add constraint FKMarket_Ani592575 foreign key (Marketmarket_id) references Market (market_id);

@@ -1,9 +1,79 @@
-UPDATE Market_Animal SET cut = ? WHERE Animalanimal_id = ? AND Marketmarket_id = ?;
-UPDATE Forum_Post SET Forum_Topictopic_id = ?, Userusername = ?, contents = ?, post_date = ? WHERE post_id = ?;
-UPDATE Forum_Topic SET Userusername = ?, topic_title = ? WHERE topic_id = ?;
-UPDATE Crop SET Farmfarm_id = ?, strain = ?, organic = ?, harvestInterval = ? WHERE crop_id = ?;
-UPDATE Favourite SET Userusername = ?, Farmfarm_id = ? WHERE favourite_id = ?;
-UPDATE Market SET marketName = ?, street = ?, town = ?, postcode = ?, telephone = ?, description = ?, image = ? WHERE market_id = ?;
-UPDATE Animal SET Farmfarm_id = ?, species = ?, breed = ?, grazed = ?, vaccinations = ?, hormones = ?, name = ?, image = ?, description = ? WHERE animal_id = ?;
-UPDATE Farm SET farmName = ?, street = ?, town = ?, postcode = ?, telephone = ?, typeOfOperation = ?, cropsGrown = ?, description = ?, image = ? WHERE farm_id = ?;
-UPDATE Users SET password = ?, email = ?, isAdmin = ? WHERE username = ?;
+update Animal set 
+  Farmfarm_id = ?, 
+  species = ?, 
+  breed = ?, 
+  grazed = ?, 
+  vaccinations = ?, 
+  hormones = ?, 
+  name = ?, 
+  image = ?, 
+  description = ? 
+where
+  animal_id = ?;
+update Farm set 
+  farmName = ?, 
+  street = ?, 
+  town = ?, 
+  postcode = ?, 
+  telephone = ?, 
+  typeOfOperation = ?, 
+  cropsGrown = ?, 
+  organic = ?, 
+  description = ? 
+where
+  farm_id = ?;
+update Favourite set 
+  Farmfarm_id = ?, 
+  Usersusername = ? 
+where
+  favourite_id = ?;
+update Users set 
+  password = ?, 
+  email = ?, 
+  isAdmin = ? 
+where
+  username = ?;
+update Forum_Post set 
+  Usersusername = ?, 
+  Forum_Topictopic_id = ?, 
+  post_date = ?, 
+  contents = ? 
+where
+  post_id = ?;
+update Forum_Topic set 
+  Usersusername = ?, 
+  topic_title = ? 
+where
+  topic_id = ?;
+update Market_Animal set 
+  Animalanimal_id = ?, 
+  Marketmarket_id = ?, 
+  cut = ? 
+where
+  animalmarket_id = ?;
+update Market set 
+  marketName = ?, 
+  street = ?, 
+  town = ?, 
+  postcode = ?, 
+  telephone = ?, 
+  description = ? 
+where
+  market_id = ?;
+update Crop set 
+  Farmfarm_id = ?, 
+  strain = ?, 
+  harvestInterval = ?, 
+  organicCrop = ? 
+where
+  crop_id = ?;
+update Dairy set 
+  Farmfarm_id = ?, 
+  harvestingSeason = ?, 
+  irrigation = ?, 
+  storage = ?, 
+  acresHarvested = ?, 
+  yield = ?, 
+  organicDairy = ? 
+where
+  produce_id = ?;
