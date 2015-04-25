@@ -1,6 +1,11 @@
 /*
  * Login page CSS code
  */
+ /*Hide stuff*/
+.noDisplay {
+	display: none;
+}
+
  input {
  	height:10%;
  	width: 70%;
