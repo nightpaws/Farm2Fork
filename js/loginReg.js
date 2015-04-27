@@ -24,10 +24,9 @@ function confirmRegister() {
     console.log("email is: " + email);
     var tf = validateRegForm();
     console.log("Registration JS Done!");
-    if(tf==true){
+    if (tf == true) {
         return true;
-    }
-    else{
+    } else {
         return false;
     }
 };
@@ -40,10 +39,9 @@ function validateLogin() {
     console.log("password is: " + password);
     var tf = validateLoginForm();
     console.log("Login JS Done!");
-     if(tf==true){
+    if (tf == true) {
         return true;
-    }
-    else{
+    } else {
         return false;
     }
 };
@@ -63,8 +61,7 @@ function validateLoginForm() {
     if (x == null || x == "") {
         alert("Username field cannot be left blank");
         return false;
-    }
-    else if (x.length > 59) {
+    } else if (x.length > 59) {
         alert("Your username is too long, it needs to be less than 60 characters in length")
         return false;
     }
@@ -74,8 +71,7 @@ function validateLoginForm() {
     if (x == null || x == "") {
         alert("Password field cannot be left blank");
         return false;
-    }
-    else if (x.length > 127) {
+    } else if (x.length > 127) {
         alert("Your password is too long, it needs to be less than 128 characters in length")
         return false;
     }
@@ -89,8 +85,7 @@ function validateRegForm() {
     if (x == null || x == "") {
         alert("Username field cannot be left blank");
         return false;
-    }
-    else if (x.length > 59) {
+    } else if (x.length > 59) {
         alert("Your username is too long, it needs to be less than 60 characters in length")
         return false;
     }
@@ -107,11 +102,10 @@ function validateRegForm() {
     if (x == null || x == "") {
         alert("Password field cannot be left blank");
         return false;
-    }
-    else if (x.length > 127) {
+    } else if (x.length > 127) {
         alert("Your password is too long, it needs to be less than 128 characters in length")
         return false;
     }
-        return true;
+    return true;
 
 };

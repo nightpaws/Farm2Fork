@@ -1,13 +1,13 @@
 <?php
 
 //database connection info
-	$configs = include('../config/config.php');
+$configs = include('../config/config.php');
 
 //variables
-$uname		= $_POST['uname'];
-$email  	= $_POST['email'];
-$passwd 	= $_POST['passwd'];
-$isAdmin	= 0;
+$uname   = $_POST['uname'];
+$email   = $_POST['email'];
+$passwd  = $_POST['passwd'];
+$isAdmin = 0;
 
 $passwordHash = sha1($passwd);
 
@@ -24,19 +24,19 @@ $dupcheck = mysqli_query($dbhandle, "SELECT * FROM Users WHERE username = '$unam
 $row_cnt = mysqli_num_rows($dupcheck);
 
 if ($row_cnt > 0) {
-  die("A user is already registered by that username!");
+    die("A user is already registered by that username!");
     
 } else {
-	//success! User is new! Begin Processing...
+    //success! User is new! Begin Processing...
     
     // Execute the query
-$sql =  "INSERT INTO Users (username, password, email, isAdmin) VALUES ('$uname','$passwordHash','$email','0')";
-
-$result = mysqli_query($dbhandle, $sql, MYSQLI_USE_RESULT);
-				
-				if($result === FALSE) { 
-				    die("An unknown error has occurred"); // TODO: better error handling
-				}
+    $sql = "INSERT INTO Users (username, password, email, isAdmin) VALUES ('$uname','$passwordHash','$email','0')";
+    
+    $result = mysqli_query($dbhandle, $sql, MYSQLI_USE_RESULT);
+    
+    if ($result === FALSE) {
+        die("An unknown error has occurred"); // TODO: better error handling
+    }
 }
 
 // close the connection
