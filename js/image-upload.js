@@ -38,17 +38,14 @@ $(function() {
 function showData(data) {
     $.ajax({
                 type: 'POST',
-                url: 'ajax/farm2fork.php',
+                url: 'ajax/redirectToFarm.php',
                 data: { 'qrcodeData' : data},
                 // or data: plaindata, // If 'plaindata' is an object.
                 dataType: 'text',
                 success: function(data) {
-                    if (data.success === 1) {
-                        console.log("Success! QRCode uploaded and decoded.");
-                    }
-                    else {
-                        console.error("Error: Couldn't fetch required information.");
-                  }
+                    var tokens = data.split(" ");
+                    localStorage.setItem('AnimalID', tokens[0]);
+                    localStorage.setItem('FarmID', tokens[1]);
                 },
                 error: function(data) {
                   console.error("AJAX Error");
