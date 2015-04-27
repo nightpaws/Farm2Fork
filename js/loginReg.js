@@ -22,8 +22,14 @@ function confirmRegister() {
     console.log("username is: " + username);
     console.log("password is: " + password);
     console.log("email is: " + email);
-    validateRegForm();
+    var tf = validateRegForm();
     console.log("Registration JS Done!");
+    if(tf==true){
+        return true;
+    }
+    else{
+        return false;
+    }
 };
 
 function validateLogin() {
@@ -52,7 +58,7 @@ function validateLoginForm() {
         alert("Username field cannot be left blank");
         return false;
     }
-    if (x.length > 59) {
+    else if (x.length > 59) {
         alert("Your username is too long, it needs to be less than 60 characters in length")
         return false;
     }
@@ -63,10 +69,12 @@ function validateLoginForm() {
         alert("Password field cannot be left blank");
         return false;
     }
-    if (x.length > 127) {
+    else if (x.length > 127) {
         alert("Your password is too long, it needs to be less than 128 characters in length")
         return false;
     }
+    return true;
+
 };
 
 function validateRegForm() {
@@ -76,7 +84,7 @@ function validateRegForm() {
         alert("Username field cannot be left blank");
         return false;
     }
-    if (x.length > 59) {
+    else if (x.length > 59) {
         alert("Your username is too long, it needs to be less than 60 characters in length")
         return false;
     }
@@ -94,8 +102,10 @@ function validateRegForm() {
         alert("Password field cannot be left blank");
         return false;
     }
-    if (x.length > 127) {
+    else if (x.length > 127) {
         alert("Your password is too long, it needs to be less than 128 characters in length")
         return false;
     }
+        return true;
+
 };

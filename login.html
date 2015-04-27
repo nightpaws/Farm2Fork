@@ -19,7 +19,6 @@
     <!-- Include JQuery -->
     <!-- will not run on devweb <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
     <script src="js/jquery-2.1.3.js"></script>
-    //
     <script src="js/jquery-2.1.3.min.js"></script>
 </head>
 
@@ -30,22 +29,24 @@
     <div class="header">
         <p>Farm2Fork: Please Login</p>
     </div>
-    <section id="loginPg" class="">
+    <section id="loginPg" action="config/login.php" method="post" class="">
           <input type="text" id="username" placeholder="username" tabindex="0">
             </br>
             <input type="password" id="password" placeholder="password" tabindex="1">
             </br>
-            <button id="loginBtn" tabindex="2">Login</button>
+            <button id="loginBtn" tabindex="2" type="submit">Login</button>
             <button id="registerBtn" tabindex="3">Register</button>
    </section>
     <section id="registerPg" class="noDisplay">
-            <input type="text" id="uname" placeholder="username">
+        <form id="reg" action="config/register.php" method="post">
+            <input type="text" id="uname" name="uname" placeholder="username">
             </br>
-            <input type="text" id="email" placeholder="e.g. email@host.com">
+            <input type="text" id="email" name="email" placeholder="e.g. email@host.com">
             </br>
-            <input type="password" id="passwd" placeholder="password">
+            <input type="password" id="passwd" name="passwd" placeholder="password">
             </br>
-            <button id="confirmRegBtn">Create Account</button>
+            <button id="confirmRegBtn" type="submit">Create Account</button>
+        </form>
             <button id="cancelBtn">Cancel Registration</button>
     </section>
 
