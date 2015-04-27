@@ -38,8 +38,14 @@ function validateLogin() {
     console.log("Validate Login - clicked!");
     console.log("username is: " + username);
     console.log("password is: " + password);
-    validateLoginForm();
+    var tf = validateLoginForm();
     console.log("Login JS Done!");
+     if(tf==true){
+        return true;
+    }
+    else{
+        return false;
+    }
 };
 
 $(document).ready(function() {

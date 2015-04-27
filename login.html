@@ -18,8 +18,7 @@
     <link rel="stylesheet" type="text/css" href="css/loginReg.css">
     <!-- Include JQuery -->
     <!-- will not run on devweb <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
-    <script src="js/jquery-2.1.3.js"></script>
-    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/jquery-1.11.2.min.js"></script>
 </head>
 
 <body>
@@ -29,12 +28,14 @@
     <div class="header">
         <p>Farm2Fork: Please Login</p>
     </div>
-    <section id="loginPg" action="config/login.php" method="post" class="">
-          <input type="text" id="username" placeholder="username" tabindex="0">
+    <section id="loginPg" class="">
+        <form id="log" action="config/login.php" method="post">
+          <input type="text" id="username" name="username" placeholder="username" tabindex="0">
             </br>
-            <input type="password" id="password" placeholder="password" tabindex="1">
+            <input type="password" id="password" name="password" placeholder="password" tabindex="1">
             </br>
             <button id="loginBtn" tabindex="2" type="submit">Login</button>
+        </form>
             <button id="registerBtn" tabindex="3">Register</button>
    </section>
     <section id="registerPg" class="noDisplay">

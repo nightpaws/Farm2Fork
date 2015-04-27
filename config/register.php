@@ -40,7 +40,7 @@ $result = mysqli_query($dbhandle, $sql, MYSQLI_USE_RESULT);
 }
 
 // close the connection
-mysql_close($dbhandle);
+mysqli_close($dbhandle);
 header("Location: ../login.html");
 die();
 ?>
