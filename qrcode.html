@@ -1,15 +1,19 @@
 <html>
     <head>
     <title>QR Code</title>
-
-    <!-- Web App settings for Android / WP -->
-    <meta name="mobile-web-app-capable" content="yes">
     
-    <!-- Stand-alone settings for iOS. -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="farm2fork, a health using JavaScript, CSS and HTML5">
+    <meta name="keywords" content="farm2fork, health, healthy eating, strathclyde, assignment, mobile app, android, apple, chrome, safari">
+    <meta name="copyright" content="Group 21">
+    <!-- Give the app an icon -->
+    <link rel="icon" sizes="192x192" href="images/appicon/farm2fork.png">
+    <link rel="apple-touch-icon" href="images/appicon/farm2fork.png">
+    <link rel="shortcut icon" href="images/appicon/farm2fork-0-75x.png" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+    <!-- Add Style -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/headerfooter.css">
     <link rel="stylesheet" type="text/css" href="css/qrCode.css">
           
@@ -36,8 +40,9 @@
 
         <div class="main" id="qrMain">
             <div id="qrInputMethods">
-                <div class = "center" id="reader" style="width:300px;height:250px;"></div><br />
-                <input type="file" id="imageFile" name="imageFile" accept="image/*"><br />
+                <div class = "center" id="reader"></div></br></br>
+                <div id="fileupload">
+                <input type="file" id="imageFile" name="imageFile" accept="image/*"></div></br>
                 <button type="button" id="uploadImgBtn">Upload Image</button>
 
                 <img id="qrcode" src=""/><br />
