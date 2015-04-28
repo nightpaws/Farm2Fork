@@ -44,8 +44,9 @@ function showData(data) {
                 dataType: 'text',
                 success: function(data) {
                     var tokens = data.split(" ");
-                    localStorage.setItem('AnimalID', tokens[0]);
-                    localStorage.setItem('FarmID', tokens[1]);
+                    localStorage.setItem('theFoodId', tokens[0]);
+                    localStorage.setItem('theMarketId', tokens[1]);
+                    window.location.href = "farmProfile.html";
                 },
                 error: function(data) {
                   console.error("AJAX Error");
