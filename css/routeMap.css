@@ -19,3 +19,17 @@
 	font-size: 250%;
 	font-family: sans-serif;
 }
+
+.back img{
+    height: 10%;
+    width: 15%;
+}
+
+.back{
+    margin-left: 45%;
+    font-family: sans-serif;
+    font-size: 200%;
+    color: #693F0F;
+    line-height: 400%;
+    margin-bottom: 5%;
+}
