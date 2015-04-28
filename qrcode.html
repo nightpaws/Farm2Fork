@@ -1,13 +1,20 @@
 <html>
     <head>
         <title>QR Code</title>
-        <link rel="stylesheet" type="text/css" href="css/headerfooter.css">
-        <link rel="stylesheet" type="text/css" href="css/qrCode.css">
-        <script src="js/qrCodeInputSelector.js"></script>  
+
+         <!-- Stand-alone settings for iOS. -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+        <link rel="stylesheet" type="text/css" href="CSS/headerfooter.css">
+        <link rel="stylesheet" type="text/css" href="CSS/qrCode.css">
+          
     <!-- Authentication Check -->
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/cookieCheck.js"></script>
-
+    <!-- Ensure  -->
+    <script src="js/linkCorrection.js"></script>
 
     <!-- megapix -->
     <script type="text/javascript" src="js/megapix-image.min.js"></script>
@@ -25,7 +32,7 @@
 
         <div class="main" id="qrMain">
             <div id="qrInputMethods">
-                <div class = "center" id="reader" style="width:300px;height:250px;"></div>
+                <div class = "center" id="reader" style="width:300px;height:250px;"></div><br />
                 <input type="file" id="imageFile" name="imageFile" accept="image/*"><br />
                 <button type="button" id="uploadImgBtn">Upload Image</button>
 
