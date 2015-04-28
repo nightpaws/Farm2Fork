@@ -24,8 +24,11 @@ $dupcheck = mysqli_query($dbhandle, "SELECT * FROM Users WHERE username = '$unam
 $row_cnt = mysqli_num_rows($dupcheck);
 
 if ($row_cnt > 0) {
-    die("A user is already registered by that username!");
-    
+	?><script type="text/javascript">
+    alert("A user is already registered by that username!");
+    history.back();
+  </script><?php
+die();    
 } else {
     //success! User is new! Begin Processing...
     
@@ -39,8 +42,13 @@ if ($row_cnt > 0) {
     }
 }
 
+
+	echo "login complete";
+    $cookieName = 'farm2fork_devweb2014.cis.strath.ac.uk';
+    setcookie($cookieName, $uname, time() + (86400 * 30), "/");
+    echo $_COOKIE[$cookieName];
 // close the connection
 mysqli_close($dbhandle);
-header("Location: ../login.html");
+header("Location: ../index.html");
 die();
 ?>
