@@ -2,10 +2,14 @@
     <head>
         <title>Distance Traveled</title>
         <link rel="stylesheet" type="text/css" href="css/headerfooter.css">
-        <!-- Authentication Check -->
+        <link rel="stylesheet" type="text/css" href="css/routeMap.css">
+         
+         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
         <script src="js/jquery-1.11.2.min.js"></script>
-        <script src="js/cookieCheck.js"></script>
         <script src="js/linkCorrection.js"></script>
+        <script src="js/cookieCheck.js"></script>
+
+        <script src="js/ecoImpact.js"></script>
     </head>
     <body>
         <div class="header">
@@ -13,6 +17,9 @@
         </div>
 
         <div class="main">
+        <div id="routeDiv"></div>
+         <div id="duration">Duration: </div>
+         <div id="distance">Distance: </div>
         </div> 
 
         <div class="footer">

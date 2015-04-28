@@ -17,29 +17,12 @@ and open the template in the editor.
     font-weight: bold;
 }
 
-#clickPostCode {
-    display : inline;
-    height : 8%;
-    width : 8%;
-    margin-left: 4%;
-    font-size: 200%;
-}
-
-#enterAPostCode {
-    width : 50%;
-    height : 8%;
-    font-size: 200%;
-
-}
 #postcodeDiv{
     text-align: center;
-    padding: 1%;
 }
 
 #mapDiv{
     width: 80%;
     height: 80%;
     margin-left: 10%;
-    margin-top: 5%;
-    
 }

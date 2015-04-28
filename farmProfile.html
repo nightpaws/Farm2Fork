@@ -3,21 +3,26 @@
         <title>Farm Profile</title>
         <link rel="stylesheet" type="text/css" href="css/headerfooter.css">
         <link rel="stylesheet" type="text/css" href="css/fourBoxLayout.css">
-        <!-- Authentication Check -->
+        <link rel="stylesheet" type="text/css" href="css/farmProfile.css">
         <script src="js/jquery-1.11.2.min.js"></script>
-        <script src="js/cookieCheck.js"></script>
         <script src="js/linkCorrection.js"></script>
+        <script src="js/cookieCheck.js"></script>
+        <script src="js/setUsername.js"></script>
+        <script src="js/loadFarmAboutPages.js"></script>
+        <script src="js/addFavourite.js"></script>
         
     </head>
-    </
     <body>
+        <audio id="audio">
+            <source src="audio/back.mp3" type="audio/mp3" />
+        </audio>
+        
         <div class="header">
-                <p id="farmName"> Farm Name Placeholder </p>
+            <span id="farmName"></span><img src="images/indexImages/favourite.png" id="farmFavouriteIcon" alt="Favourite Icon">
         </div>
-
         <div class="main">
             <a href="aboutFood.html">
-            <div class ="box topLeftBox">
+            <div class ="box topLeftBox" id="aboutFood">
                 <img src="images/farmProfileImages/knifeAndFork.png" alt="About Food">
                 <p>About Food</p>
             </div>

@@ -15,16 +15,16 @@
 
         <div class="main">
             <div class="aboutScrollBox">
-                <img class="foodImage" id="foodImage" src="images/farmProfileImages/aboutFarmImages/TransparentPlaceholder.png" alt="animalImage">
+                <img class="foodImage" id="foodImage" src="images/farmProfileImages/animalImagePlaceholder.png" alt="animalImage">
                 <br>
-                <p><u><span id="profileType"> . </span> Profile </u></p>
-                <p> <b><span id="descriptionCategory1">default</span> </b> <span id="descriptionCategory1b">default</span></p>
-                <p><b><span id="descriptionCategory2">Breed: </span></b> <span id="descriptionCategory2b">default</span></p>
-                <p><b><span id="descriptionCategory3">Grazing Area: </span></b> <span id ="descriptionCategory3b">default</span></p>
-                <p><b><span id="descriptionCategory4">Vaccinations: </span></b><span id="descriptionCategory4b">default</span></p>
-                <p><b><span id="descriptionCategory5">Hormones: </span></b><span id="descriptionCategory5b">default</span></p>  
+                <p><u><span id="profileType"> Animal Profile </span></u></p>
+                <p> <b><span id="descriptionCategory1">Animal ID: </span> </b> <span id="animalName"><?php echo '$_GET['a_id']'; ?></span></p>
+                <p><b><span id="descriptionCategory2">Breed: </span></b> <span id="breed"><?php echo '$_GET['breed']'; ?></span></p>
+                <p><b><span id="descriptionCategory3">Grazing Area: </span></b> <span id ="grazingArea"><?php echo '$_GET['g_area']'; ?></span></p>
+                <p><b><span id="descriptionCategory4">Vaccinations: </span></b><span id="vaccinations"><?php echo '$_GET[&vacc']'; ?></span></p>
+                <p><b><span id="descriptionCategory5">Hormones: </span></b><span id="hormones"><?php echo '$_GET['hor']'; ?></span></p>  
                 <br>
-                <p><b><span id="descriptionCategory6">Bio: </span></b><span id="descriptionCategory6b">default</span></p>  
+                <p><b>Bio: </b><span id="foodBio">default</span></p>  
             </div>
             <div class="back">
                 <a href="farmProfile.html">
@@ -73,5 +73,3 @@
 
     </body>
 </html>
-
- 

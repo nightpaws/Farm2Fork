@@ -3,26 +3,33 @@
         <title>About Farm</title>
         <link rel="stylesheet" type="text/css" href="css/headerfooter.css">
         <link rel="stylesheet" type="text/css" href="css/farmAboutPages.css">
-        <script src="js/loadAboutFarm.js"></script>
-        <!-- Authentication Check -->
+
         <script src="js/jquery-1.11.2.min.js"></script>
-        <script src="js/cookieCheck.js"></script>
         <script src="js/linkCorrection.js"></script>
+        <script src="js/cookieCheck.js"></script>        
+        <script src="js/loadAboutFarm.js"></script>
     </head>
     <body>
         <div class="header">
-                <p> About Farm </p>
+            <p> About <span id="aboutFarmName">Farm</span> </p>
+           
         </div>
 
         <div class="main">
             <div class="aboutScrollBox">
-                <img id="farmImage" src="images/farmProfileImages/farmImagePlaceholder.png" alt="farmImage">
+                <img id="farmImage" src="images/farmProfileImages/aboutFarmImages/TransparentPlaceholder.png" alt="farmImage">
                 <br>
                 <p><b>Organic: </b> <span id="organic">default</span></p>
                 <p><b>Types of operation: </b><span id="typesOfOperation">default</span></p>
                 <p><b>Crops grown: </b><span id ="cropsGrown">default</span></p>
                 <br>
-                <p><b>Bio: </b><span id="bio">default</span></p>              
+                <p><b>Bio: </b><span id="bio">default</span></p>
+                <br>
+                <p><b><u>Contact:</u></b></p>
+                <p><span id="street"></span></p>
+                <p><span id="town"></span></p>
+                <p><span id="postcode"></span></p>
+                <p><span id="telephone"></span></p>
             </div>
             <div class="back">
                 <a href="farmProfile.html">

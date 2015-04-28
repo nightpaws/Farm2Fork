@@ -1,24 +1,27 @@
+
 <html>
     <head>
         <title>Map</title>
         <link rel="stylesheet" type="text/css" href="css/headerfooter.css">
         <link rel="stylesheet" type="text/css" href="css/map.css">
-        <script src="https://maps.googleapis.com/maps/api/js"> /*Load the google API*/</script>
+        <!--<script src="https://maps.googleapis.com/maps/api/js"> /*Load the google API*/</script>-->
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script src="js/linkCorrection.js"></script>
+        <script src="js/cookieCheck.js"></script>
         <script src="js/initialiseMap.js"> /*Set properties of the map*/</script>
         <script src="js/searchMap.js"> /*Set properties of the map*/</script>
-        <!-- Authentication Check -->
-        <script src="js/jquery-1.11.2.min.js"></script>
-        <script src="js/cookieCheck.js"></script>
-        <script src="js/linkCorrection.js"></script>
+        <script src="js/populateMap.js"></script>
     </head>
     <body>
         <div class="header">
-                <p> Enter your post code </p>
+               
         </div>
 
         <div class="main">
             <div id ="postcodeDiv">
-                    <input type="search" onsearch="searchMap()" id = "postcodeInput" name="postcodeInput"> 
+                    <input type="search" id = "postcodeInput" name="postcodeInput" value = "Input a Postcode" results = 5>
+                    <button id = "clickPostCode" type = "button" onclick="searchMap()">Go</button>
             </div>
             <div id="mapDiv">               
             </div>
