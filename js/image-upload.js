@@ -43,9 +43,12 @@ function showData(data) {
                 // or data: plaindata, // If 'plaindata' is an object.
                 dataType: 'text',
                 success: function(data) {
-                    var tokens = data.split(" ");
-                    localStorage.setItem('theFoodId', tokens[0]);
-                    localStorage.setItem('theMarketId', tokens[1]);
+                    if (window.localStorage){
+                        var tokens = data.split(" ");
+                        localStorage.setItem('theFoodId', tokens[0]);
+                        localStorage.setItem('theMarketId', tokens[1]);
+                        console.log("Food ID and Market ID set.");
+                    }
                     window.location.href = "farmProfile.html";
                 },
                 error: function(data) {
